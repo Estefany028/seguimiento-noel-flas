@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Seguimiento de Colaboradores – Noel</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+
+<header></header>
+
+<main>
+
+  <!-- ===== LOGIN ADMIN (NO ROMPE EXTERNO) ===== -->
+  <div class="admin-bar">
+    <input type="password" id="adminToken" placeholder="Token administrador">
+    <button id="btnEntrarAdmin" type="button">Entrar admin</button>
+    <span id="modo"></span>
+  </div>
+
+  <!-- ===== VISTA ADMIN (OCULTA POR DEFECTO) ===== -->
+  <section id="vistaAdmin" class="hidden">
+    <h2 style="margin-top:0;">📋 Solicitudes activas – Vista Administrador</h2>
+    <div id="contenedorSolicitudes"></div>
+
+    <footer>
+      Sistema interno · Vista Administrador
+    </footer>
+  </section>
+
+  <!-- ===== VISTA EXTERNO ===== -->
+  <section id="vistaExterno">
+
+    <div class="search-box">
+      <input type="text" id="buscador" placeholder="Buscar por cédula…">
+    </div>
+
+    <div id="estadoActualizacion"></div>
+
+    <div class="table-wrapper">
+      <table id="tablaExterno">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Cédula</th>
+            <th>Empresa</th>
+            <th>Certificados</th>
+            <th>Inducción</th>
+            <th>Seguridad Social</th>
+            <th>Estado General</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <footer>
+      Sistema interno · Uso corporativo
+    </footer>
+
+  </section>
+
+</main>
+
+<!-- ===== MODAL (EXTERNO) ===== -->
+<div id="modal" class="modal">
+  <div class="modal-card">
+    <h3>Documentos por actualizar</h3>
+    <p id="modalMotivo" style="margin-top:10px;"></p>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfw8xlAPb6jy3wOwQv_paagntFYpSsAHQ4adLsGQMVCGVrcVg/viewform"
+       target="_blank"
+       class="badge warn"
+       style="display:inline-block; margin-top:14px;">
+      Actualizar documentos
+    </a>
+
+    <div style="text-align:right; margin-top:20px;">
+      <button type="button" onclick="cerrarModal()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
+
+

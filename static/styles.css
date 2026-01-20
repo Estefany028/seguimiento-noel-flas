@@ -1,0 +1,269 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+
+  /* 🍪 Fondo de galletas */
+  background-image: url("https://proplayer20.neocities.org/fondo.png");
+  background-repeat: repeat;
+  background-size: 180px;
+  background-attachment: fixed;
+}
+
+/* 🟥 Banner fijo */
+header {
+  height: 125px;
+  background-image: url("https://proplayer20.neocities.org/Banner%20Ex%C3%A1menes-06.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+main {
+  padding: 24px 30px 40px;
+}
+
+h2 { margin-top: 0; }
+
+/* ======= BUSCADOR ======= */
+.search-box {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-box input {
+  padding: 10px 14px;
+  width: 260px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#estadoActualizacion {
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #555;
+}
+
+/* ======= TABLA EXTERNA ======= */
+.table-wrapper {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+
+  max-height: calc(100vh - 260px);
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  background-color: #f0f0f0;
+  padding: 12px;
+  font-size: 13px;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 14px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* ======= BADGES ======= */
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.ok {
+  background: #e6f4ea;
+  color: #137333;
+}
+
+.warn {
+  background: #fff4e5;
+  color: #b26a00;
+  cursor: pointer;
+}
+
+.bad {
+  background: #fdecea;
+  color: #b71c1c;
+}
+
+/* ======= MODAL ======= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 9999;
+}
+
+.modal-card {
+  background: #fff;
+  width: 420px;
+  margin: 120px auto;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+/* ======= ADMIN: TARJETA SOLICITUD ======= */
+.solicitud {
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  overflow: hidden;
+}
+
+.solicitud-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  background: #f5f5f5;
+  align-items: center;
+}
+
+.solicitud-header:hover { background: #eeeeee; }
+
+.solicitud-header strong { font-size: 15px; }
+
+.flecha {
+  font-size: 18px;
+  transition: transform .2s ease;
+}
+
+.solicitud-body {
+  display: none;
+  padding: 16px 20px 20px;
+}
+
+.solicitud.abierta .solicitud-body { display: block; }
+.solicitud.abierta .flecha { transform: rotate(90deg); }
+
+input.consecutivo {
+  width: 90px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  text-align: center;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #777;
+  text-align: right;
+}
+
+.hidden { display: none; }
+
+/* barra token admin */
+.admin-bar{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-bottom:14px;
+}
+.admin-bar input{
+  padding:10px 12px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  width:260px;
+}
+.admin-bar button{
+  padding:10px 12px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  cursor:pointer;
+  background:#fff;
+}
+#modo{ font-weight: 600; }
+
+/* cards admin */
+.card{
+  background:#fff;
+  border-radius:10px;
+  margin:14px 0;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
+  overflow:hidden;
+}
+
+.card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 16px;
+  background:#f5f5f5;
+  cursor:pointer;
+}
+
+.card .flecha{ transition: transform .2s ease; }
+.card.open .flecha{ transform: rotate(90deg); }
+
+.meta{
+  display:none;
+  padding: 10px 16px;
+  gap:10px;
+  flex-wrap:wrap;
+  color:#444;
+  font-size:13px;
+}
+.card.open .meta{ display:flex; }
+
+.people{ display:none; padding: 10px 16px 16px; }
+.card.open .people{ display:block; }
+
+.people table{
+  width:100%;
+  border-collapse:collapse;
+}
+.people th{
+  background:#f0f0f0;
+  padding:10px;
+  font-size:12px;
+  text-transform:uppercase;
+}
+.people td{
+  padding:10px;
+  border-bottom:1px solid #e5e5e5;
+  font-size:14px;
+}
+.people input{
+  width:110px;
+  padding:6px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+.people button{
+  padding:6px 10px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  background:#fff;
+  cursor:pointer;
+}
